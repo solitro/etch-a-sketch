@@ -107,9 +107,11 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
 }
 #colorPicker,
-#rgbContainer{
+#rgbContainer,
+#shadeContainer{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,4 +123,7 @@
     justify-content: center;
     align-items: center;
     gap: 4px;
+}
+#resetBtn{
+    background-color: black;
 }

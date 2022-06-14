@@ -9,6 +9,9 @@ const resVal = document.getElementById("resVal");
 const screen = document.getElementById("screen");
 const colorSel = document.getElementById("color");
 const rgb = document.getElementById("rgb");
+const shade = document.getElementById("shade");
+const clearBtn = document.getElementById("resetBtn");
+clearBtn.addEventListener('click', () => reset());
 let mouseDown = false;
 let res = slider.value * (16 / 9);
 resVal.innerText = res + ' x ' + slider.value;
@@ -23,6 +26,13 @@ slider.oninput = function() {
     resVal.innerText = res + ' x ' + this.value;
     resetRes();
 };
+
+function reset(){
+    colorSel.value = 000000;
+    rgb.checked = false;
+    shade.checked = false;
+    resetRes();
+}
 
 function resetRes(){
     if (screen.children.length > 0) {
@@ -54,14 +64,13 @@ function divHover(){
                         randColor();
                     };
                     pixel.style.backgroundColor = colorSel.value;
+                    if (shade.checked === true){
+                    pixel.style.opacity = (+pixel.style.opacity + .1);
+                    };
                 };
         });
     });
-}
-
-function clear(){
-
-}
+};
 
 function createPixels(){
     //res = length
