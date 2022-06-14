@@ -1,0 +1,92 @@
+#mainContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+#gameContainer{
+    background-color: red;
+    width: 1160px;
+    height: 760px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow:
+        inset -10px -10px 10px darkred,
+        inset 10px 10px 10px darkred,
+        inset 10px -10px 10px darkred,
+        inset -10px 10px 10px darkred;
+}
+#screen{
+    margin-top: 50px;
+    background-color: whitesmoke;
+    width: 960px;
+    height: 540px;
+    border-radius: 16px;
+    margin: 0;
+    box-shadow:
+        -10px -10px 10px darkred,
+        10px 10px 10px darkred,
+        10px -10px 10px darkred,
+        -10px 10px 10px darkred;
+}
+.title{
+    font-family: Lobster;
+    font-size: 42px;
+    margin: 16px 0;
+    color: white;
+}
+.knob{
+    background-color: lightgray;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        -5px -5px 5px darkred,
+        5px 5px 5px darkred,
+        5px -5px 5px darkred,
+        -5px 5px 5px darkred;
+}
+#knobContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.knobCenter{
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50%, lightgrey,#eee 35%);
+}
+#pixSlider{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#resVal,
+#resTitle{
+    font-size: 18px;
+    font-weight: 900;
+    font-family: lobster;
+    color: white;
+    margin: 0;
+}
+#resContainer{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+}
+#resolution{
+    width: 150px;
+}
