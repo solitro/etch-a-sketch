@@ -7,7 +7,7 @@
 #gameContainer{
     background-color: red;
     width: 1160px;
-    height: 760px;
+    height: 781px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -35,7 +35,7 @@
 .title{
     font-family: Lobster;
     font-size: 42px;
-    margin: 16px 0;
+    margin: 24px 0;
     color: white;
 }
 .knob{
@@ -58,6 +58,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     
 }
 .knobCenter{
@@ -73,8 +74,7 @@
     align-items: center;
     justify-content: center;
 }
-#resVal,
-#resTitle{
+.label{
     font-size: 18px;
     font-weight: 900;
     font-family: lobster;
@@ -89,4 +89,36 @@
 }
 #resolution{
     width: 150px;
+}
+.pixel{
+    flex: auto;
+    height: 100%;
+    user-select: none;
+}
+.pixelRow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: auto;
+    width: 100%;
+}
+#screen{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#colorPicker,
+#rgbContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+#colorContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
 }

@@ -23,12 +23,22 @@
                 <div class="knob">
                     <div class="knobCenter"></div>
                 </div>
+                <div id="colorContainer">
+                    <div id="colorPicker">
+                        <p id="colorTitle" class="label">Color:</p>
+                        <input type="color" value="black" id="color">
+                    </div>
+                    <div id="rgbContainer">
+                        <p class="label">RGB:</p>
+                        <input type="checkbox" value="false" id="rgb">
+                    </div>
+                </div>
                 <div id="pixSlider">
                     <div id="resContainer">
-                        <p id="resTitle">Resolution:</p>
-                        <p id="resVal"></p>
+                        <p id="resTitle" class="label">Resolution:</p>
+                        <p id="resVal" class="label"></p>
                     </div>
-                    <input type="range" min="9" max="99" value="9" step="9" class="slider" id="resolution">
+                    <input type="range" min="9" max="81" value="9" step="9" class="slider" id="resolution">
                 </div>
                 <div class="knob">
                     <div class="knobCenter"></div>

@@ -6,17 +6,57 @@
 
 const slider = document.getElementById("resolution");
 const resVal = document.getElementById("resVal");
+const screen = document.getElementById("screen");
+const colorSel = document.getElementById("color");
+const rgb = document.getElementById("rgb");
+let mouseDown = false;
 let res = slider.value * (16 / 9);
 resVal.innerText = res + ' x ' + slider.value;
+colorSel.value = "black";
+createPixels();
 
+document.getElementsByTagName("body")[0].addEventListener('mousedown', () => mouseDown = true);
+document.getElementsByTagName("body")[0].addEventListener('mouseup', () => mouseDown = false);
 
 slider.oninput = function() {
     res = this.value * (16 / 9);
     resVal.innerText = res + ' x ' + this.value;
+    resetRes();
 };
 
 function resetRes(){
+    if (screen.children.length > 0) {
+        let childCount = screen.children.length;
+        for (let i = 0 ; i < childCount; i++){
+            screen.removeChild(screen.lastChild);  
+        };
+        createPixels();
+    };
+};
+function randColor(){
+    let red = Math.floor(Math.random()*255)+1;
+    let green = Math.floor(Math.random()*255)+1;
+    let blue = Math.floor(Math.random()*255)+1;
+    colorSel.value = "#" + ColorToHex(red) + ColorToHex(green) + ColorToHex(blue);
+};
+function ColorToHex(color) {
+    var hexadecimal = color.toString(16);
+    return hexadecimal.length == 1 ? "0" + hexadecimal : hexadecimal;
+  }
 
+function divHover(){
+    const Pixels = document.querySelectorAll('.pixel');
+    Pixels.forEach((pixel) => {
+        
+            pixel.addEventListener('mouseover', () => {
+                if (mouseDown === true) {
+                    if (rgb.checked === true){
+                        randColor();
+                    };
+                    pixel.style.backgroundColor = colorSel.value;
+                };
+        });
+    });
 }
 
 function clear(){
@@ -24,11 +64,21 @@ function clear(){
 }
 
 function createPixels(){
-    const screen = document.getElementById("screen");
-    if (screen.children.length > 0) {
-        for (let i = 0; i < screen.children.length; i++)
-            screen.lastChild.del
-        };
-
-}
+    //res = length
+    //slider.value = height
+    let pixelRow;
+    let pixel;
+    for (let resHeight = 1 ; resHeight <= slider.value ; resHeight++){
+        pixelRow = document.createElement('div');
+        pixelRow.classList.add('pixelRow');
+        for(let resLenth = 1 ; resLenth <= res ; resLenth++){
+            pixel = document.createElement('div');
+            pixel.classList.add('pixel');
+            pixel.removeAttribute("draggable");
+            pixelRow.appendChild(pixel);
+        }
+        screen.appendChild(pixelRow);
+    };
+    divHover();
+};
 
